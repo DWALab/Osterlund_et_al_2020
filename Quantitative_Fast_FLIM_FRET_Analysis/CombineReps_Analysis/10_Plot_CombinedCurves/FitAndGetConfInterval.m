@@ -24,7 +24,7 @@ end
 fit_equation  = strcat('(',num2str(saturation),'* x) / (kd + x)'); 
     try
         x(x<0) = 0 ;
-        f = fit(x,y,fit_equation, 'Lower',[0],'StartPoint',[1],'MaxIter',1000,'TolFun',1e-4);
+        f = fit(x,y,fit_equation, 'Lower',[0],'StartPoint',[1],'MaxIter',5000,'TolFun',1e-4);
         conf_int = confint(f); 
         xx = -0.0001:50; 
 
