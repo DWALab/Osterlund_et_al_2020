@@ -1,0 +1,10 @@
+Next we need to combine the .CSV files for each well.  Use command prompt to do this.  Note, cmd will not work to access the Network * so just make a copy of the “Result csv” folder on the desktop.     
+In command prompt 
+ Type directory location. for example if my data is in the G drive type "G:" to change to the G directory
+ Type: ‘cd’ (space) then paste the location of your Result csv folder on the desktop. This will change the directory to the location of your folder on the desktop.  
+ Check that you are in the correct location by typing ‘dir’ and press enter. This will show you all the names of the files in that location.
+ Copy and paste this line:  
+
+For %i in (A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P) DO For /L %j in (1,1,24) Do copy /b WellID_%i%j-* combined_%i%j.csv
+
+Now a “combined_csv” file will be made for each well.  Cut only these combined files to a folder in your results folder on the Network. We will call this folder “combined csvs”.  Delete the remaining copy of the csvs on the desktop. 
